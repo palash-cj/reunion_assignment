@@ -14,7 +14,8 @@ app.use(multer().array());
 app.use('/api',api);
 
 mongoose.connect(process.env.MONGO_URL, ({
-    useNewUrlParser:true
+    useNewUrlParser:true,
+    useUnifiedTopology: true
 }))
 const db = mongoose.connection
 db.on('error', error=>console.error(error))
